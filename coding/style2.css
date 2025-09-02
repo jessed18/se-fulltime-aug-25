@@ -1,0 +1,109 @@
+.box1{
+    width: 150px;
+    height: 100px;
+    background-color: aliceblue;
+    padding: 20px;
+    margin: 10px;
+    border: 5px solid blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box2{
+    width: 100px;
+    height: 80px;
+    background-color: antiquewhite;
+    padding: 30px;
+    margin: 15px;
+    border: 3px dashed green;
+}
+
+.box3{
+    width: 200px;
+    height: 150px;
+    background-color: aqua;
+    padding: 30px;
+    margin: 20px;
+    border: 7px dotted red;
+}
+
+.underline{
+    text-decoration: underline;
+
+}
+
+.line-through{
+    text-decoration: line-through;
+}
+
+.overline{
+    text-decoration: overline;
+}
+
+.block{
+    display: block;
+    background: overlight;
+    margin: 5px;
+}
+
+.inline{
+    display: inline;
+    background: lightgreen
+}
+
+.inlineblock{
+    display: inline-block;
+    background: lightgray;
+}
+
+.flex-container{
+    display: flex;
+    gap: 10px;
+}
+
+.flex-items{
+    background: lightcoral;
+    padding: 10px;
+}
+
+.px{
+    font-size: 20px;
+}
+
+.em{
+  font-size: 2em;
+}
+
+.percent{
+    font-size: 150%;
+}
+
+.bg-image{
+    width: 300px;
+    height: 150px;
+    background-image: url("https://tse2.mm.bing.net/th/id/OIP.cctU5dK9QtYaAEI8zQhEgQHaEo?rs=1&pid=ImgDetMain&o=7&rm=3");
+    align-items:center;
+}
+
+form{
+    margin-top: 10px;
+}
+
+input{
+    display: block;
+    margin: 10px 0;
+    padding: 8px;
+    width: 200px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+button{
+    padding: 10px 15px;
+    background: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 4px;
+}
