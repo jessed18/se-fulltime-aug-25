@@ -66,18 +66,18 @@ conseole.log("Age:" +student.age);
 console.log("course:" + student.course);
 
 
-let car = {
-    brand: "toyota",
-    model: "corolla",
-    year: "2024",
+let shoe = {
+    brand: "air forces",
+    color: "white",
+    year: "2020",
 
     start: function(){
-        console.log("The car has started");
+        console.log("The shoe is worn.");
     }
 };
 
-console.log(car.brand);
-console.year(car.year);
-console.log(car.model);
+console.log(shoe.brand);
+console.log(shoe.color);
+console.log(shoe.year);
 
-car.start();
+shoe.start();
