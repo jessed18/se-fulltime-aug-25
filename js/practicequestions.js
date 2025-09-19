@@ -111,6 +111,21 @@ for (let i = 1; i <= 12; i++){
     }
 
 
+for (let i = 1; i <= 30; i++){
+    console.log(i);
+}
+
+    if (i % 3 == 0 && i % 5 == 0){
+        console.log("fizzbuzz");
+    } else if (i % 3 == 0) {
+        console.log("fizz");
+    } else if (i % 5 == 0) {
+        console.log("buzz")
+    } else {
+        console.log(i)
+    }
+    
+
 // . Write a program to calculate the sum of only even numbers between 1 to 100.
 
 let sum = 0;
@@ -140,30 +155,3 @@ for (let num = 2; num <= 50; num++){
     }
 }
 
-//fgsdfg
-
-let numbers = [10, -10, 30, 140, 50, 54, 70, -10, 80, 90, 4, -20, -30, -100];
-
-let min = numbers[0];
-
-for(let i = 0; i < numbers.length; i++) {
-    if (min > bumbers[i])
-    {
-        min = numbers[i];
-    }
-}
-console.log("Minimum is: " + min);
-
-// max
-
-let numbers = [10, -10, 30, 140, 50, 54, 70, -10, 80, 90, 4, -20, -30, -100];
-
-let max = numbers[0];
-
-for(let i = 0; i < numbers.length; i++) {
-    if (max < numbers[i])
-    {
-        max = numbers[i];
-    }
-}
-console.log("Minimum is: " + min);

@@ -61,6 +61,7 @@ let student = {
     age: "21",
     course: "software engineering"
 };
+
 console.log("Name:" +student.name);
 conseole.log("Age:" +student.age);
 console.log("course:" + student.course);
@@ -81,3 +82,49 @@ console.log(shoe.color);
 console.log(shoe.year);
 
 shoe.start();
+
+// object with nested object
+
+let person = {
+    name: "jesse",
+    age: "21",
+    course: {
+        major: "software engineering",
+        minor: "javascript"
+
+    }
+}
+
+console
+
+// create object with array property and use function also
+
+let products = {
+    name: "jesse's skincare",
+    items: ["cleanser", "moisturizer", "toner"],
+    add: function(product) {
+        this.items.push(product);
+    }
+};
+
+console.log(products.name);       
+console.log(products.items);      
+
+products.add("cleanser");           
+console.log(products.items);      
+
+// another example: creating an object with array 
+
+let library = {
+    name: "swag library",
+    books: ["work hard play hard book", "evolution of success", "crazy life lessons"],
+    showBooks: function(){
+        console.log("Books available in" + this.name + ":");
+        for (let i = 0; i < this.books.length; i++){
+            console.log("-" + this.books[i]);
+        }
+    }
+};
+
+console.log(library.name);
+library.showBooks();
