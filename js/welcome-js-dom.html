@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>welcome page</title>
+</head>
+<body>
+    <h1 id="heading1">Helllo World</h1>
+    <button onclick = "changeheading()">click me</button>
+
+    <p class="p_name">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, earum. Hic, culpa! Dolore atque debitis, soluta maiores tempore id ex.</p>
+    <p class="p_name">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias mollitia explicabo nisi reprehenderit! Incidunt omnis rem eligendi, fugiat quod quis.</p>
+    <button onclick="styleFirstP()">style paragraph #1</button>
+
+
+    <script>
+        function changeheading() {
+            let heading = document.getElementById("heading1");
+            heading.innerHTML = "welcome to javascript DOM!";
+        }
+
+        function styleFirstP() {
+            let paragraphs = document.getElementsByClassName("p_name");
+            paragraphs[0].style.color = "red";
+            paragraphs[1].style.fontSize = "20px";
+        }
+
+
+    </script>
+    
+</body>
+</html>

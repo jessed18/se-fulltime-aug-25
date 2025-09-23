@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My List Example</title>
+</head>
+<body>
+  <div>
+    <ul id="my-list"></ul>
+    <input type="text" id="itemInput" placeholder="enter new item">
+    <button onclick="addToList()">add item</button>
+    <button onclick="removeLast()">remove last item</button>
+  </div>
+
+  <script>
+    function addToList() {
+      let input = document.getElementById("itemInput").value;
+      if (input === "") return; 
+      
+      let newListItem = document.createElement("li");
+      newListItem.textContent = input;
+      
+      let list = document.getElementById("my-list");
+      list.appendChild(newListItem);
+
+      document.getElementById("itemInput").value = ""; 
+    }
+
+    function removeLast() {
+      let list = document.getElementById("my-list");
+      let lastItem = list.lastElementChild;
+      if (lastItem) {
+        list.removeChild(lastItem);
+      }
+    }
+  </script>
+</body>
+</html>
+
+<!-- Create a code where:
+task 1 - There is a list (ul) with some items.
+A button "Add Item" appends a new list item at the end using appendChild().
+A button "Remove Last Item" removes the last list item using removeChild().
+
+task 2 - Create an unordered list (<ul>) with 3 items: Apple, Banana, Mango.
+Add a button below the list with the text "Replace Banana with Orange".
+When the button is clicked, the word Banana should be replaced with Orange using replaceChild().
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>list of fruits</title>
+</head>
+<body>
+  <div>
+    <ul id="fruit-list">
+      <li>apple</li>
+      <li id="banana-item">banana</li>
+      <li>mango</li>
+    </ul>
+    <button onclick="replaceFruit()">replace banana with orange</button>
+  </div>
+
+  <script>
+    function replaceFruit() {
+      let list = document.getElementById("fruit-list");
+      let banana = document.getElementById("banana-item");
+      if (banana) {
+        let orange = document.createElement("li");
+        orange.textContent = "orange";
+        list.replaceChild(orange, banana);
+      }
+    }
+  </script>
+</body>

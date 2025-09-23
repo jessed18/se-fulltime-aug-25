@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- example with getElementById -->
+    <h1 id="title">hello world</h1>
+    <button onclick="changeTitle()">change title</button>
+
+    <script>
+        function changeTitle(){
+            let element = document.getElementById("title");
+            element.innerHTML = "text changed using getElementById()";
+        }
+    </script>
+
+    <!-- example with getElementsByClassName -->
+    <p class="mytext">paragraph 1</p>
+    <p class="mytext">paragraph 2</p>
+    <button onclick="changetext()">change first paragraph</button>
+
+    <script>
+        function changetext(){
+            let elements = document.getElementsByClassName("mytext");
+            elements[0].innerHTML = "first paragraph changed!";
+        }
+    </script>
+
+    <!-- example with getElementsByTagName -->
+    <p>paragraph</p>
+    <p>paragraph 2</p>
+    <button onclick="changepara()">change second paragraph</button>
+
+    <script>
+        function changepara(){
+            let elements = document.getElementsByTagName("p");
+            elements[1].innerHTML = "Second paragraph changed!";
+        }
+    </script>
+</body>
+</html>
+
+<!--create/remove elements-->
+
+<div id="container"> </div>
+<button onclick = "addElement()">add element</button>
+
+<script>
+
+    function addElement(){
+        let newpara = document.createElement("p")
+        newpara.textContent = "this is new paragraph"
+        document.getElementById("container").appendChild(newpara);
+    }
+</script>
+
+<ul id="list">
+    <li>item 1</li>
+    <li id = "removeme">item 2</li>
+    <li>item 3</li>
+</ul>
+<button onclick = "removeitem()">remove</button>
+
+<script>
+    function removeitem(){
+        let list = document.getElementById("list")
+        let item = document.getElementById("removeme")
+        list.removeChild(item);
+    }
+</script>
+
+

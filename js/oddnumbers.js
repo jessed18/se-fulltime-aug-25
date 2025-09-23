@@ -86,9 +86,9 @@ let marks = [35, 60, 80];
 
 for (let i = 0; i < marks.length; i++){
     if (marks[i] >=50){
-        console.log("student" +(i+1)+ "is pass")
+        console.log("student" +(i+1)+ "is: pass");
     }
     else{
-        console.log("student is fail")
+        console.log("student" +(i+1)+ "is: fail");
     }
 }

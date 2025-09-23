@@ -1,3 +1,4 @@
+// module 1
 // datatypes and variables
 
 // 1. Enumerate all datatypes you have learned.
@@ -125,4 +126,218 @@ if (firstName.length === 0) {
     console.log('short name');
 } else {
     console.log('long name');
+}
+
+
+// module 2
+// if else exercise
+
+// ask the user to enter a name
+// if the name is empty. print: empty
+// if the name is 1-8 characters long, print "short name"
+// otherwise, print "long name"
+
+let firstName = prompt('Enter a name');
+
+if (firstName === null && firstName.length === 0) {
+    console.log('empty');
+} else if (firstName.length <= 8) {
+    console.log('short name');
+} else {
+    console.log('long name');
+};
+
+// logical operators exercise
+// AND 
+console.log('logical operator');
+console.log('false && false -->', false && false);
+console.log('false && true -->', false && true);
+console.log('true && false -->', true && false);
+console.log('true && true -->', true && true);
+
+// OR
+console.log('logical operator');
+console.log('false || false -->', false || false);
+console.log('false || true -->', false || true);
+console.log('true || false -->', true || false);
+console.log('true || true -->', true || true);
+
+// negation
+console.log('negation');
+console.log('!true -->', !true);
+console.log('false -->', !false);
+console.log('!!true -->', !!true);
+
+// exclusive or operation
+console.log('exclusiive or operation');
+let a = true;
+let b = false;
+let xor = (a,b) => (!a && b) || (a && !b);
+let axorb = (!a && b) || (a && !b);
+console.log('a XOR b', axorb);
+// feel free to switch true and false around
+
+// switch statement exercise
+let secretIndex = Math.floor(Math.random()*5);
+
+switch (secretValue) {
+    case 0:
+        console.log('zero');
+        break;
+    case 1:
+        console.log('one');
+        break;
+    case 2:
+        console.log('two');
+        break;
+    case 3:
+        console.log('three');
+        break;
+   default:
+        console.log('four');
+};
+
+// or you can also use a dictionary
+let dict = {
+    '0': 'zero',
+    '1': 'one',
+    '2': 'two',
+    '3': 'three',
+    '4': 'four',
+}
+console.log(dict[secretValue]);
+
+// iteration - while loop 
+let i = 0;
+while (i < list.length) {
+    console.log(list[i]);
+    i = i + 1;
+};
+
+// iteration - for loop 
+// for (initialization; condition; increment) {body_statements;}
+
+for (let i = 0; i < list.length; i = i++) {
+    console.log(list[i]);
+};
+
+// for in loop
+for (let i in list) {
+    console.log(list[i]);
+};
+
+// for of loop
+for (let day of list) {
+    console.log(day);
+};
+
+// do while loop
+let userInput = null;
+do {
+   userInpur = prompt('Enter a value');
+} while (!(userInput !== null && userInput.length > 0));
+console.log(userInout + 'is valid');
+
+// coding challenge #1
+// console log all numbers (from 0 to 9) inclusive.
+for (let i = 0; i < 10; i++) {
+    console.log(i);
+};
+
+// from 1 to 10 (inclusive)
+for (let i = 1; i <= 10; i++) {
+    console.log(i);
+};
+
+// from 9 to 0 (inclusive)
+for (let i = 9; i >= 0; i--) {
+    console.log(i);
+};
+
+// from 10 to 1 (inclusive)
+for (let i = 10; i >= 1; i--) {
+    console.log(i);
+};
+
+// that are even between 1 and 25. instead of the odd numbers, write "odd"
+for (let i = 1; i <= 25; i++) {
+    if (i % 2 === 1) {
+        console.log('odd');
+    } else {
+        console.log(i);
+    }
+};
+
+// coding challenge #2
+// ask the user to enter an integer between 1 and 100. validate your input and
+// repeat asking the user for this input until the user succeeds
+
+do {
+   let value = prompt('Enter a number between 1 and 100');
+   let intValue = Number.parseInt(value);
+} while (
+    !Number.isNaN(intValue) && 
+    typeof intValue == 'number' &&
+    intValue >= 1 && intValue <= 100
+);
+
+console.log('the input is valid', intValue);
+
+// coding challenge #3
+// create an algorithm that guesses the 
+// number entered by the user optimally such that we always exclude at least
+// half of the available numbers in the domain 1 to 100
+// in each step, console log the guess and console log whether the number to be
+// guessed is lower, higher, or equal to the guess
+
+// example: suppose the user entered 35. the computer's guesses:
+// 50 lower (remaining interval: 1 to 49)
+// 25 higher (remaining interval: 26 to 49)
+// 38 lower (remaining intervaL: 26 to 38)
+// 31 higher (remaining interval: 32 to 38)
+// 35 match
+
+let minValue = 1;
+let maxValue = 100;
+
+let intValue = 35;
+
+while (minValue <= maxValue) {
+    let midpoint = Math.floor((minValue + maxValue) / 2);
+
+    if (intValue === midpoint) {
+        console.log(midpoint, "match");
+        break; 
+    } else if (intValue < midpoint) {
+        console.log(midpoint, "lower");
+        maxValue = midpoint - 1; 
+    } else {
+        console.log(midpoint, "higher");
+        minValue = midpoint + 1;
+    }
+}
+
+// coding challenge #4
+// think of a number between 1 ans 100, but don't tell this to the computer
+// once the computer guesses a number based on the rules seen in exercise 3,
+// tell the computer if your number is greater than, less than, or equal to the
+// guess of teh computer. the computer continues guessing until it guesses your
+// number correctly
+let minValue = 1;
+let maxValue = 100;
+let response = "";
+
+while (response !== "equal") {
+    let midpoint = Math.floor((minValue + maxValue) / 2);
+    response = prompt(`is your number ${midpoint}? (type 'higher', 'lower', or 'equal')`);
+
+    if (response === "equal") {
+        console.log(`congrats! the number is ${midpoint}`);
+    } else if (response === "lower") {
+        maxValue = midpoint - 1;
+    } else if (response === "higher") {
+        minValue = midpoint + 1;
+    } else {
+        console.log("type 'higher', 'lower', or 'equal'");
+    }
 }
