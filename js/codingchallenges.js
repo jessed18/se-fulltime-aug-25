@@ -341,3 +341,186 @@ while (response !== "equal") {
         console.log("type 'higher', 'lower', or 'equal'");
     }
 }
+
+// quadratic equation exercise
+function getCoefficient(name) {
+    let value;
+    do {
+        value = Number(prompt(`Enter coefficient ${name}:`));
+    } while (isNaN(value));
+    return value;
+}
+
+function getCoefficients() {
+    let a = getCoefficient('a');
+    let b = getCoefficient('b');
+    let c = getCoefficient('c');
+    return [a, b, c];
+}
+
+function getDiscriminant(a, b, c) {
+    return b * b - 4 * a * c;
+}
+
+function printQuadraticSolutions(a, b, c) {
+    let discriminant = getDiscriminant(a, b, c);
+    let sqrtDisc = Math.sqrt(discriminant);
+    let solution1 = (-b + sqrtDisc) / (2 * a);
+    let solution2 = (-b - sqrtDisc) / (2 * a);
+    console.log(`This equation has two solutions: ${solution1} and ${solution2}`);
+}
+
+function printSingleSolution(a, b) {
+    let solution = -b / (2 * a);
+    console.log(`This equation has one solution: ${solution}`);
+}
+
+function printComplexSolutions() {
+    console.log('This equation has complex solutions.');
+}
+
+function quadraticEquation() {
+    let [a, b, c] = getCoefficients();
+    let discriminant = getDiscriminant(a, b, c);
+    if (discriminant > 0) {
+        printQuadraticSolutions(a, b, c);
+    } else if (discriminant === 0) {
+        printSingleSolution(a, b);
+    } else {
+        printComplexSolutions();
+    }
+}
+
+// factorial exercise
+let i = 0;
+while (i < 10) {
+    console.log(i);
+    i += 1;
+}
+
+function countToTen(val) {
+    if (val >= 10) return;
+    console.log(val);
+    countToTen(val + 1);
+}
+
+
+function factorial(n) {
+    if (n === 0) return 1;
+    return n * factorial(n-1);
+}
+let factArrow = n => n === 0 ? 1: n * factorial(n-1);
+
+console.log('factorial(5)', facotiral(5));
+console.log('factArrow(5)', factorial(5));
+console.log('5*4*3*2', 5*4*3*2);
+
+// descructuring and sprad operator
+let [first, {a: secondAValue}] = [{a:1}, {a:2}, {a:5}];
+
+let a = 2;
+let b = 1;
+
+console.log(a,b);
+[a,b] = [b,a];
+// [a,b] = [1,2];
+// a = 1; AND b = 2; in parallel
+console.log(a,b);
+
+// let first = {a : 1};
+// let secondValue = 2
+
+
+// cloning exercise
+let dbTable = [
+    {first: 'A', last: 'B'},
+    {first: 'C', last: 'D'}
+]
+
+function logChangedRecords(records) {
+    // let internalRecords = [...records]; // shallow copy 
+    let internalRecords = sturcuturedClone(records); // deep copy
+    for (let record of internalRecords) {
+        record.title = 'Ms.';
+    }
+    console.table(internalRecords);
+}
+
+logChangedRecords(dbTable);
+
+console.table(dbTable);
+
+// 1. create a function that calculates the nth fibonacci number based on the definition.
+// fib(0) is 0.
+// fib(1) is 1.
+// fib(n) is fib(n-1) + fib(n-2) for n>=2.
+
+function fib(n) {
+    if (n ==0) return 0;
+    if (n==1) return 1;
+    return fib(n-1) + fib(n-2);
+}
+
+console.log(fib((7)));
+
+
+// 2. create a function that accepts an array and incremenrs eacj value in the array by 1.
+// you can assume the input only contains numbers.
+// then print the return value of the array and the original array to the console.
+// make sure the original array stays intact.
+
+let arr = [1,2,5];
+
+function incrementValues(list) {
+   list = [...list]; // shallow copy - outside world stays intact.
+   for (let i in list) {
+         list[i] += 1;
+   }
+   console.log('inside',list);
+}
+
+incrementValues(arr);
+console.log('outside',arr);
+
+
+// 3. create a function that generates an HTML unorderd list from an array and
+// returns the generated unordered list HTML markup as a string.
+
+let days = ['Sunday',
+            'Monday',
+            'Tuesday',
+            'Wednesday',
+            'Thursday',
+            'Friday',
+            'Saturday'];
+
+function UlMarkup(list) {
+    let html ='<ul';
+    for (let item of list){
+        html += `<li${item}</li>`;
+    }
+    html += '</ul>';
+    return html;
+}
+
+console.log(toUlMarkup(days));
+
+// that was demo, here is the actual challenge
+let container = document.querySelector('.js-container');
+container.innerHTML = toUlMarkup(days);
+
+// 4. create a function that generates an HTML table from a 3x3 array and 
+// returns the generated table HTML markup as a string.
+function toTableMarkup(arr) {
+    let html = '<table border="1">';
+    for (let row of arr) {
+        html += '<tr>';
+        for (let cell of row) {
+            html += `<td>${cell}</td>`;
+        }
+        html += '</tr>';
+    }
+    html += '</table>';
+    return html;
+}
+
