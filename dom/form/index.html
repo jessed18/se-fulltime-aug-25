@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>to do</title>
+</head>
+<body>
+    <h1>to do form</h1>
+    <form action="#" method="GET" class="js-form">
+        <div class = "form-row">
+            <label>
+                todo item name:
+                <input type ="text" name ="todo-name"/>
+            </label>
+        </div>
+        <div class = "form-row">
+            <label>
+                todo target date:
+                <input type="date" name="todo-deadline"/>
+            </label>
+        </div>
+        <button type = "submit">add</button>
+        <div class="form-row error js-error-container"></div>
+    </form>
+    <section class="js-container"></section>
+    <script src = "todo.js"></script>
+</body>
+</html>

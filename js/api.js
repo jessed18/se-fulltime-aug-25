@@ -17,13 +17,17 @@ console.log(jsonPersonString);
 
 document.getElementById('loadUserButton').addEventListener('click', () => {
     fetch('https://jsonplaceholder.typicode.com/users')
-        .then(function(response) {
-            return response.json();
-        })
-        .then(function(data) {
-            console.log(data);
-        })
-        .catch(function(error) {
-            console.log('Error:', error);
-        });
-});
+        return response.json();
+}).then(data => { 
+
+        console.log(data)
+        for (let i = 0; i < data.length; i++)
+        {
+          document.getElementById('data').innerHTML += `Name is: ${data[i].name} and Email is: ${data[i].email}`
+          `<br>`;
+        }
+   });
+})
+
+let nameOfImage = null;
+document.getElementById
